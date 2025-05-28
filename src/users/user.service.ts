@@ -14,7 +14,7 @@ export class UserService {
     return "update another user's name";
   }
 
-  getUserDetailInfo(): string {
-    return "user's age";
+  getUserDetailInfo(id): string {
+    return "user's ageing: " + id;
   }
 }

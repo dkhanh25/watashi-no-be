@@ -1,7 +1,7 @@
-import { Controller, Get, Post, Put } from "@nestjs/common";
-import { UserService } from "../user.service";
+import { Controller, Get, Param, Post, Put } from '@nestjs/common';
+import { UserService } from '../user.service';
 
-@Controller("users")
+@Controller('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
   @Get()
@@ -18,8 +18,8 @@ export class UserController {
     return this.userService.putUser();
   }
 
-  @Get("/:id")
-  getUserDetailInfo(): string {
-    return this.userService.getUserDetailInfo();
+  @Get('/:id')
+  getUserDetailInfo(@Param('id') id): string {
+    return this.userService.getUserDetailInfo(id);
   }
 }
